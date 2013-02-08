@@ -7,5 +7,5 @@
         "webapps-framework-lib",
         "webapps-cms-lib",
         "webapps-user-lib"
-    ),
+    ]
 }
