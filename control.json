@@ -1,0 +1,11 @@
+{
+    "version" : "0.1.0",
+    "license" : "Commercial",
+    "package" : "webapps-geocoder-lib", 
+    "classes" : ["GeoCoder"],
+    "deps"    : [
+        "webapps-framework-lib",
+        "webapps-cms-lib",
+        "webapps-user-lib"
+    ),
+}
