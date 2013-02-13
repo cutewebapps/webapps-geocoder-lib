@@ -25,12 +25,14 @@ class Geocoder_ZipCanada_Table extends DBx_Table
     /**
      * get single record matching given ZIP
      * 
-     * @param string $strZip candaian zip, min 6 chars
+     * @param string $strZip canadian zip, min 6 chars
      * @return Geocoder_ZipCanada
      */
     public function fetchByZip( $strZip )
     {
-        $select = $this->select()->where( 'zip = ?', $strZip );
+        $select = $this->select()
+                ->where( 'zip = ?', $strZip )
+                ->where( 'city <> ?', '' );
         return $this->fetchRow( $select );
     }
     
@@ -42,7 +44,9 @@ class Geocoder_ZipCanada_Table extends DBx_Table
      */
     public function findByZip( $strZip )
     {
-        $select = $this->select()->where( 'zip = ?', $strZip );
+        $select = $this->select()
+                ->where( 'zip = ?', $strZip )
+                ->where( 'city <> ?', '' );
         return $this->fetchAll( $select );
     }
 }
