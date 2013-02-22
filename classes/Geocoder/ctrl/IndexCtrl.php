@@ -12,8 +12,8 @@ class Geocoder_IndexCtrl extends App_DbTableCtrl
     {
         $arrResult = array();
         
-        $strZip = $this->_getParam('zip');
-        $strCountry = $this->_getParam('country');
+        $strZip = str_replace( ' ', '', trim( $this->_getParam('zip') ) );
+        $strCountry = trim( $this->_getParam('country'));
         
         if ( $strCountry == 'US' ) {
             $objZip = Geocoder_ZipUs::Table()->fetchByZip( $strZip );
