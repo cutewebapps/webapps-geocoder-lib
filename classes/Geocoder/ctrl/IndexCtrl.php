@@ -12,7 +12,7 @@ class Geocoder_IndexCtrl extends App_DbTableCtrl
     {
         $arrResult = array();
         
-        $strZip = str_replace( ' ', '', trim( $this->_getParam('zip') ) );
+        $strZip = str_replace( ' ', '', str_replace( '-', '', str_replace( '_', '', trim( $this->_getParam('zip') ) )));
         $strCountry = trim( $this->_getParam('country'));
         
         if ( $strCountry == 'US' ) {
